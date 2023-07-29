@@ -257,41 +257,21 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'About',
     children: [
       {
+        label: 'The mission',
+        subLabel: 'What we\'re here to do',
+        href: 'mission',
+      },
+      {
         label: 'The team',
         subLabel: 'Learn about the creators',
         href: 'team',
       },
-      {
-        label: 'The mission',
-        subLabel: 'What we\'re here to do',
-        href: '#',
-      },
+
     ],
   },
   {
     label: 'Learn',
-    children: [
-      {
-        label: 'Chemistry',
-        href: '#',
-      },
-      {
-        label: 'Engineering',
-        href: '#',
-      },
-      {
-        label: 'Mathematics',
-        href: '#',
-      },
-      {
-        label: 'Mechatronics',
-        href: '#',
-      },
-      {
-        label: 'Physics',
-        href: '#',
-      },
-    ],
+    href: 'learn',
   },
   {
     label: 'Forum',
