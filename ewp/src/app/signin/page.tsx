@@ -64,7 +64,7 @@ export default function SignInPage() {
                 Sign in
               </Button>
               <Text align={'center'}>
-                Don't have an account? <Link color={'blue.400'}>Signup</Link>
+                Don't have an account? <Link color={'blue.400'} href="signup">Register</Link>
               </Text>
             </Stack>
           </Stack>
