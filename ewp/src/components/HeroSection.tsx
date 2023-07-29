@@ -39,14 +39,14 @@ export default function HeroSection() {
                 position: 'absolute',
                 bottom: 1,
                 left: 0,
-                bg: 'red.400',
+                bg: 'green.400',
                 zIndex: -1,
               }}>
-              Write once,
+              Fluktuition,
             </Text>
             <br />
-            <Text as={'span'} color={'red.400'}>
-              use everywhere!
+            <Text as={'span'} color={'green.400'}>
+              Make your engineer life better
             </Text>
           </Heading>
           <Text color={'gray.500'}>
@@ -61,8 +61,8 @@ export default function HeroSection() {
               fontWeight={'normal'}
               px={6}
               colorScheme={'red'}
-              bg={'red.400'}
-              _hover={{ bg: 'red.500' }}>
+              bg={'green.400'}
+              _hover={{ bg: 'green.500' }}>
               Get started
             </Button>
             <Button
@@ -88,7 +88,7 @@ export default function HeroSection() {
             top={'-20%'}
             left={0}
             zIndex={-1}
-            color={useColorModeValue('red.50', 'red.400')}
+            color={useColorModeValue('green.50', 'green.600')}
           />
           <Box
             position={'relative'}

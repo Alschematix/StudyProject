@@ -52,19 +52,19 @@ export default function SignInPage() {
                 justify={"space-between"}
               >
                 <Checkbox>Remember me</Checkbox>
-                <Text color={"blue.400"}>Forgot password?</Text>
+                <Text color={"green.400"}>Forgot password?</Text>
               </Stack>
               <Button
-                bg={"blue.400"}
+                bg={"green.400"}
                 color={"white"}
                 _hover={{
-                  bg: "blue.500",
+                  bg: "green.500",
                 }}
               >
                 Sign in
               </Button>
               <Text align={'center'}>
-                Don't have an account? <Link color={'blue.400'} href="signup">Register</Link>
+                Don't have an account? <Link color={'green.400'} href="signup">Register</Link>
               </Text>
             </Stack>
           </Stack>

@@ -13,12 +13,17 @@ import {
 } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 import {
-  FcAbout,
-  FcAssistant,
-  FcCollaboration,
-  FcDonate,
-  FcManager,
-} from 'react-icons/fc'
+  BiMath
+} from 'react-icons/bi'
+import{
+  SlChemistry
+} from 'react-icons/sl'
+import {
+  RxRocket
+} from 'react-icons/rx'
+import {
+  MdOutlineEngineering
+} from 'react-icons/md'
 
 interface CardProps {
   heading: string
@@ -66,46 +71,38 @@ export default function Feature() {
     <Box p={4}>
       <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
         <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
-          Short heading
+          Fields of Study
         </Heading>
-        <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis obcaecati ut
-          cupiditate pariatur, dignissimos, placeat amet officiis.
-        </Text>
+
       </Stack>
 
       <Container maxW={'5xl'} mt={12}>
         <Flex flexWrap="wrap" gridGap={6} justify="center">
           <Card
-            heading={'Heading'}
-            icon={<Icon as={FcAssistant} w={10} h={10} />}
+            heading={'Mathematics'}
+            icon={<Icon color="black" as={BiMath} w={10} h={10} />}
             description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
             href={'#'}
           />
           <Card
-            heading={'Heading'}
-            icon={<Icon as={FcCollaboration} w={10} h={10} />}
+            heading={'Chemistry'}
+            icon={<Icon color="black" as={SlChemistry} w={10} h={10} />}
             description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
             href={'#'}
           />
           <Card
-            heading={'Heading'}
-            icon={<Icon as={FcDonate} w={10} h={10} />}
+            heading={'Physics'}
+            icon={<Icon color="black" as={RxRocket} w={10} h={10} />}
             description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
             href={'#'}
           />
           <Card
-            heading={'Heading'}
-            icon={<Icon as={FcManager} w={10} h={10} />}
+            heading={'Engineering'}
+            icon={<Icon color="black" as={MdOutlineEngineering} w={10} h={10} />}
             description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
             href={'#'}
           />
-          <Card
-            heading={'Heading'}
-            icon={<Icon as={FcAbout} w={10} h={10} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
-            href={'#'}
-          />
+
         </Flex>
       </Container>
     </Box>
