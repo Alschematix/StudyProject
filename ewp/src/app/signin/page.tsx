@@ -12,7 +12,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  Link
+  Link,
 } from "@chakra-ui/react";
 
 export default function SignInPage() {
@@ -63,8 +63,11 @@ export default function SignInPage() {
               >
                 Sign in
               </Button>
-              <Text align={'center'}>
-                Don't have an account? <Link color={'green.400'} href="signup">Register</Link>
+              <Text align={"center"}>
+                Don't have an account?{" "}
+                <Link color={"green.400"} href="signup">
+                  Register
+                </Link>
               </Text>
             </Stack>
           </Stack>

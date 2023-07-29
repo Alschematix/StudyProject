@@ -259,7 +259,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'The team',
         subLabel: 'Learn about the creators',
-        href: '#',
+        href: 'team',
       },
       {
         label: 'The mission',
@@ -272,11 +272,15 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'Learn',
     children: [
       {
+        label: 'Chemistry',
+        href: '#',
+      },
+      {
         label: 'Engineering',
         href: '#',
       },
       {
-        label: 'Math',
+        label: 'Mathematics',
         href: '#',
       },
       {

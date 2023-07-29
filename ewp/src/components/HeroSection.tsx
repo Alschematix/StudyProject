@@ -42,7 +42,7 @@ export default function HeroSection() {
                 bg: 'green.400',
                 zIndex: -1,
               }}>
-              Fluktuition,
+              Fluktuition
             </Text>
             <br />
             <Text as={'span'} color={'green.400'}>

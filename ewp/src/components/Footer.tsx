@@ -104,7 +104,7 @@ export default function Footer() {
             <Box as="a" href={'#'}>
               Blog
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'contact'}>
               Contact us
             </Box>
             <Box as="a" href={'#'}>
