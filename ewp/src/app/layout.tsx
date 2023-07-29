@@ -1,7 +1,5 @@
 "use client"
-import Feature from "@/components/Feature";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/HeroSection";
 import NavBar from "@/components/NavBar";
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -20,8 +18,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <ChakraProvider>
           <NavBar />
-          <HeroSection />
-          <Feature />
           {children}
           <Footer />
         </ChakraProvider>

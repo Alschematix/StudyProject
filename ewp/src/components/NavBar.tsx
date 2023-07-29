@@ -54,7 +54,8 @@ export default function NavBar() {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            Logo
+              <Button as={"a"} href="/" variant={"link"}>Logo</Button>
+            
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -67,7 +68,7 @@ export default function NavBar() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href="signin">
             Sign In
           </Button>
           <Button
@@ -77,7 +78,7 @@ export default function NavBar() {
             fontWeight={600}
             color={'white'}
             bg={'pink.400'}
-            href={'#'}
+            href="signup"
             _hover={{
               bg: 'pink.300',
             }}>
