@@ -1,5 +1,7 @@
 'use client'
 
+import { SearchBar } from './SearchBar'
+
 import {
   Box,
   Flex,
@@ -49,7 +51,7 @@ export default function NavBar() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+        <Flex align="center" flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
@@ -60,9 +62,12 @@ export default function NavBar() {
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
+            
           </Flex>
+          
         </Flex>
-
+        
+        
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
@@ -100,7 +105,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} spacing={4} alignItems={"center"}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -138,6 +143,7 @@ const DesktopNav = () => {
           </Popover>
         </Box>
       ))}
+      <Flex align="flex-start"><SearchBar /></Flex>
     </Stack>
   )
 }
