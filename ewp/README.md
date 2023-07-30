@@ -2,7 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-Before anything, make sure you have the correct dependencies installed by running:
+First, make sure you are in the ewp directory:
+
+Then install any missing dependencies:
 
 ```bash
 npm install
