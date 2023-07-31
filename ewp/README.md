@@ -2,12 +2,26 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, make sure you are in the ewp directory:
+
+Then install any missing dependencies:
+
+```bash
+npm install
+```
+
+Optionally, you can check what dependencies you currently have by running:
+
+```bash
+npm list
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
-yarn dev
+yarn dev (you need to have yarn installed)
 # or
 pnpm dev
 ```

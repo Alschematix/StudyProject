@@ -1,5 +1,7 @@
 'use client'
 
+import { SearchBar } from './SearchBar'
+
 import {
   Box,
   Flex,
@@ -49,25 +51,29 @@ export default function NavBar() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+        <Flex align="center" flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            Logo
+              <Button as={"a"} href="/" variant={"link"}>Logo</Button>
+            
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
+            
           </Flex>
+          
         </Flex>
-
+        
+        
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href="signin">
             Sign In
           </Button>
           <Button
@@ -76,10 +82,10 @@ export default function NavBar() {
             fontSize={'sm'}
             fontWeight={600}
             color={'white'}
-            bg={'pink.400'}
-            href={'#'}
+            bg={'green.400'}
+            href="signup"
             _hover={{
-              bg: 'pink.300',
+              bg: 'green.300',
             }}>
             Sign Up
           </Button>
@@ -99,7 +105,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} spacing={4} alignItems={"center"}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -137,6 +143,7 @@ const DesktopNav = () => {
           </Popover>
         </Box>
       ))}
+      <Flex align="flex-start"><SearchBar /></Flex>
     </Stack>
   )
 }
@@ -150,12 +157,12 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+      _hover={{ bg: useColorModeValue('green.50', 'gray.900') }}>
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'green.400' }}
             fontWeight={500}>
             {label}
           </Text>
@@ -169,7 +176,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           justify={'flex-end'}
           align={'center'}
           flex={1}>
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={'green.400'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Box>
@@ -243,41 +250,31 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
+    label: 'Home',
+    href: "/"
+  },
+  {
+    label: 'About',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
+        label: 'The mission',
+        subLabel: 'What we\'re here to do',
+        href: 'mission',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
+        label: 'The team',
+        subLabel: 'Learn about the creators',
+        href: 'team',
       },
+
     ],
   },
   {
-    label: 'Find Work',
-    children: [
-      {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
-      },
-    ],
+    label: 'Learn',
+    href: 'learn',
   },
   {
-    label: 'Learn Design',
-    href: '#',
-  },
-  {
-    label: 'Hire Designers',
+    label: 'Forum',
     href: '#',
   },
 ]
