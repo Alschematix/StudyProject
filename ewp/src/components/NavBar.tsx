@@ -31,6 +31,9 @@ export default function NavBar() {
   return (
     <Box>
       <Flex
+        position={"fixed"}
+        zIndex={9000}
+        width={"100%"}
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
@@ -39,7 +42,9 @@ export default function NavBar() {
         borderBottom={1}
         borderStyle={'solid'}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
+        align={'center'}
+        >
+        
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -91,6 +96,8 @@ export default function NavBar() {
           </Button>
         </Stack>
       </Flex>
+      <Flex
+      marginBottom={100}></Flex>
 
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
@@ -151,6 +158,7 @@ const DesktopNav = () => {
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Box
+      
       as="a"
       href={href}
       role={'group'}
@@ -185,7 +193,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
+    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }} zIndex={9000}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -197,7 +205,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
+    <Stack spacing={4} onClick={children && onToggle} zIndex={9000}>
       <Box
         py={2}
         as="a"
@@ -275,6 +283,6 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Forum',
-    href: '#',
+    href: 'forum',
   },
 ]
