@@ -1,6 +1,7 @@
 "use client"
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import Spacer from "@/components/Spacer";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import { Inter } from 'next/font/google'
@@ -18,7 +19,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ChakraProvider>
           <NavBar />
+          <Spacer />
           {children}
+          <Spacer />
           <Footer />
         </ChakraProvider>
         </body>

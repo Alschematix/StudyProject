@@ -1,6 +1,7 @@
 'use client'
 
 import { SearchBar } from './SearchBar'
+import { ToggleLight } from './ColorMode'
 
 import {
   Box,
@@ -31,7 +32,7 @@ export default function NavBar() {
   return (
     <Box>
       <Flex
-        position={"fixed"}
+        position={"fixed"} 
         zIndex={9000}
         width={"100%"}
         bg={useColorModeValue('white', 'gray.800')}
@@ -78,6 +79,7 @@ export default function NavBar() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
+            <Flex align="center" justifyContent={'flex-start'}><ToggleLight /></Flex>
           <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href="signin">
             Sign In
           </Button>
@@ -96,8 +98,7 @@ export default function NavBar() {
           </Button>
         </Stack>
       </Flex>
-      <Flex
-      marginBottom={100}></Flex>
+
 
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
@@ -151,6 +152,7 @@ const DesktopNav = () => {
         </Box>
       ))}
       <Flex align="flex-start"><SearchBar /></Flex>
+      
     </Stack>
   )
 }
@@ -169,7 +171,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
-            transition={'all .3s ease'}
+            transition={'all .3s ease-in-out'}
             _groupHover={{ color: 'green.400' }}
             fontWeight={500}>
             {label}
@@ -193,7 +195,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }} zIndex={9000}>
+    <Stack pos={'fixed'} top='55' w='100%' bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }} zIndex={9000}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -205,8 +207,11 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Stack spacing={4} onClick={children && onToggle} zIndex={9000}>
+    
+    <Stack spacing={4} onClick={children && onToggle} zIndex={9000} >
       <Box
+        // pos='fixed'
+     
         py={2}
         as="a"
         href={href ?? '#'}
@@ -221,16 +226,18 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         {children && (
           <Icon
             as={ChevronDownIcon}
-            transition={'all .25s ease-in-out'}
+            transition={'all 0s'}
             transform={isOpen ? 'rotate(180deg)' : ''}
             w={6}
             h={6}
           />
         )}
       </Box>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+      
+      
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }} >
         <Stack
+ 
           mt={2}
           pl={4}
           borderLeft={1}
@@ -245,7 +252,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
             ))}
         </Stack>
       </Collapse>
+      
     </Stack>
+    
   )
 }
 
