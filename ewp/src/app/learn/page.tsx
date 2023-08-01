@@ -16,10 +16,36 @@ import { RiApps2Fill } from "react-icons/ri";
 import { IoBookSharp } from "react-icons/io5"
 import { BsPencilFill } from "react-icons/bs"
 import { FaMap } from "react-icons/fa"
+import { BiSolidCategoryAlt } from "react-icons/bi";
+import { BsHandIndexFill } from "react-icons/bs"
 
-export default function SocialProfileSimple() {
+export default function Learn() {
   return (
     <Flex gap={10} justifyContent={"center"} margin={200} flexWrap={"wrap"} >
+      <Box
+        as="a" href="fields"
+        display={"flex"}
+        flexDirection={"column"}
+        maxW={"320px"}
+        minW={"320px"}
+        w={"full"}
+        bg={useColorModeValue("white", "gray.900")}
+        boxShadow={"2xl"}
+        rounded={"lg"}
+        p={6}
+        textAlign={"center"}
+        justifyContent={"center"}
+        alignItems="center"
+        padding={20}
+        gap={10}
+      >
+        <Icon display="flex" justifyContent="center"
+        as={BiSolidCategoryAlt} boxSize={20} />
+
+        <Heading fontSize={"2xl"} fontFamily={"body"}>
+          Fields
+        </Heading>
+      </Box>
       <Box
         display={"flex"}
         flexDirection={"column"}
@@ -60,58 +86,36 @@ export default function SocialProfileSimple() {
         gap={10}
       >
         <Icon display="flex" justifyContent="center"
-        as={IoBookSharp} boxSize={20} />
-
-        <Heading fontSize={"2xl"} fontFamily={"body"}>
-          Topics
-        </Heading>
-      </Box>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        maxW={"320px"}
-        minW={"320px"}
-        w={"full"}
-        bg={useColorModeValue("white", "gray.900")}
-        boxShadow={"2xl"}
-        rounded={"lg"}
-        p={6}
-        textAlign={"center"}
-        justifyContent={"center"}
-        alignItems="center"
-        padding={20}
-        gap={10}
-      >
-        <Icon display="flex" justifyContent="center"
-        as={BsPencilFill} boxSize={20} />
-
-        <Heading fontSize={"2xl"} fontFamily={"body"}>
-          Exercises
-        </Heading>
-      </Box>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        maxW={"320px"}
-        minW={"320px"}
-        w={"full"}
-        bg={useColorModeValue("white", "gray.900")}
-        boxShadow={"2xl"}
-        rounded={"lg"}
-        p={6}
-        textAlign={"center"}
-        justifyContent={"center"}
-        alignItems="center"
-        padding={20}
-        gap={10}
-      >
-        <Icon display="flex" justifyContent="center"
         as={FaMap} boxSize={20} />
 
         <Heading fontSize={"2xl"} fontFamily={"body"}>
           Map
         </Heading>
       </Box>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        maxW={"320px"}
+        minW={"320px"}
+        w={"full"}
+        bg={useColorModeValue("white", "gray.900")}
+        boxShadow={"2xl"}
+        rounded={"lg"}
+        p={6}
+        textAlign={"center"}
+        justifyContent={"center"}
+        alignItems="center"
+        padding={20}
+        gap={10}
+      >
+        <Icon display="flex" justifyContent="center"
+        as={BsHandIndexFill} boxSize={20} />
+
+        <Heading fontSize={"2xl"} fontFamily={"body"}>
+          Dictionary
+        </Heading>
+      </Box>
+
 
     </Flex>
   );

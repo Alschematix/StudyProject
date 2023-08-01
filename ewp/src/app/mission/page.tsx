@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import Feature from "@/components/Feature";
 
-export default function CallToActionWithAnnotation() {
+export default function Mission() {
   return (
     <>
       <Container maxW={"3xl"}>
