@@ -6,7 +6,7 @@ import { SmallCard } from "@/components/SmallCard";
 
 export default function Fields() {
   const items: string[][] = [
-    ["Math Element 1"],
+    ["Math Element 1","math-1"],
     ["Math Element 2"],
     ["Math Element 3"],
     ["Math Element 4"],

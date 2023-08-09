@@ -5,9 +5,10 @@ interface Props {
   name: string;
   date: string;
   content: string;
+  title: string;
 }
 
-export const Contributor = ({ name, date, content }: Props) => {
+export const Contributor = ({ name, date, content, title }: Props) => {
   return (
     <>
       <Flex w="100%" flexDir={"column"}>
@@ -17,7 +18,7 @@ export const Contributor = ({ name, date, content }: Props) => {
         <Flex w="100%" align={"self-start"}>
           Date: {date}
         </Flex>
-        <BigCard content={content} />
+        <BigCard content={content} title={title} />
       </Flex>
     </>
   );

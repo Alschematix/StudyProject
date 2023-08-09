@@ -6,7 +6,7 @@ import { SmallCard } from "@/components/SmallCard";
 
 export default function Fields() {
   const items: string[][] = [
-    ["Electrical Components", "electricalcomponents"],
+    ["Electrical Components", "electrical-components"],
     ["Math", "math"],
     ["Physics", "physics"],
     ["Control Theory", "controltheory"],
