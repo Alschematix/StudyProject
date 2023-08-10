@@ -18,7 +18,7 @@ export const Contributor = ({ name, date, content, title }: Props) => {
         <Flex w="100%" align={"self-start"}>
           Date: {date}
         </Flex>
-        <BigCard content={content} title={title} />
+        <BigCard content={content} title={title}/>
       </Flex>
     </>
   );
