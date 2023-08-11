@@ -17,6 +17,7 @@ export const BigCard = ({ content, title , }: Props) => {
         flexDirection={"column"}
         w="100%"
         minH={100}
+        minW={'300px'}
         bg={useColorModeValue("white", "gray.900")}
         boxShadow={"2xl"}
         rounded={"lg"}
