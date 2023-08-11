@@ -6,13 +6,13 @@ import { SmallCard } from "@/components/SmallCard";
 
 export default function Fields() {
   const items: string[][] = [
-    ["Control Theory Element 1"],
-    ["Control Theory Element 2"],
-    ["Control Theory Element 3"],
-    ["Control Theory Element 4"],
+    ["Electrical Components Element 1", "electrical-components-1"],
+    ["Electrical Components Element 2"],
+    ["Electrical Components Element 3"],
+    ["Electrical Components Element 4"],
   ];
 
-  const heading = "Control Theory";
+  const heading = "Electrical Components"
 
   return (
     <Flex justify={"center"} flexDir={"column"}>

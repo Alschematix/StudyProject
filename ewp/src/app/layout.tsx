@@ -1,30 +1,33 @@
-"use client"
+"use client";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Spacer from "@/components/Spacer";
-import { ChakraProvider } from "@chakra-ui/react";
+import SignIn from "@/components/SignIn";
+import { ChakraProvider, useDisclosure } from "@chakra-ui/react";
 
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
-
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <ChakraProvider>
-          <NavBar />
+          <NavBar onClick={onOpen} />
+          <SignIn isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
           <Spacer />
           {children}
           <Spacer />
           <Footer />
         </ChakraProvider>
-        </body>
+      </body>
     </html>
-  )
+  );
 }

@@ -77,28 +77,29 @@ export default function Feature() {
       </Stack>
 
       <Container maxW={'5xl'} mt={12}>
-        <Flex flexWrap="wrap" gridGap={6} justify="center">
+        <Flex flexWrap="wrap" gridGap={6} justify="center" >
           <Card
+            
             heading={'Mathematics'}
-            icon={<Icon color="black" as={BiMath} w={10} h={10} />}
+            icon={<Icon color={useColorModeValue("black","white")} as={BiMath} w={10} h={10} /> } 
             description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
             href={'#'}
           />
           <Card
             heading={'Chemistry'}
-            icon={<Icon color="black" as={SlChemistry} w={10} h={10} />}
+            icon={<Icon color={useColorModeValue("black","white")} as={SlChemistry} w={10} h={10} />}
             description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
             href={'#'}
           />
           <Card
             heading={'Physics'}
-            icon={<Icon color="black" as={RxRocket} w={10} h={10} />}
+            icon={<Icon color={useColorModeValue("black","white")} as={RxRocket} w={10} h={10} />}
             description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
             href={'#'}
           />
           <Card
             heading={'Engineering'}
-            icon={<Icon color="black" as={MdOutlineEngineering} w={10} h={10} />}
+            icon={<Icon color={useColorModeValue("black","white")} as={MdOutlineEngineering} w={10} h={10} />}
             description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
             href={'#'}
           />

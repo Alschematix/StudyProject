@@ -1,0 +1,14 @@
+.img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    min-width: 300px;
+    width: 400px;
+}
+
+.math2 {
+    width: 70%;    
+}
