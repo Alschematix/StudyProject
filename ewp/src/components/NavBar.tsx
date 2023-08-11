@@ -26,7 +26,12 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
-export default function NavBar() {
+//Added Props to pass an onclick function
+interface Props {
+  onClick: () => void;
+}
+
+export default function NavBar({ onClick }: Props) {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -88,12 +93,13 @@ export default function NavBar() {
           <Flex align="center" justifyContent={"flex-start"}>
             <ToggleLight />
           </Flex>
+          {/*Change href in the button to onClick*/}
           <Button
             as={"a"}
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href="signin"
+            onClick={onClick}
           >
             Sign In
           </Button>
@@ -316,24 +322,23 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Learn",
     href: "learn",
     children: [
-      { 
+      {
         label: "Fields",
-         href: "fields" 
-        },
-        {
-          label: "Applications",
-          href: "applications"
-        },
-        {
-          label: "Map",
-          href: "map"
-        },
-        {
-          label: "Dictionary",
-          href: "dictionary"
-        }
-
-      ],
+        href: "fields",
+      },
+      {
+        label: "Applications",
+        href: "applications",
+      },
+      {
+        label: "Map",
+        href: "map",
+      },
+      {
+        label: "Dictionary",
+        href: "dictionary",
+      },
+    ],
   },
   {
     label: "Forum",
