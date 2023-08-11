@@ -4,6 +4,8 @@ import { Contributor } from "@/components/Contributor";
 
 import { Flex, VStack } from "@chakra-ui/react";
 import "./image.css";
+import { Comment } from "@/components/Comment";
+
 
 export default function MathElement1() {
   const contributors: string[][] = [
@@ -24,13 +26,15 @@ export default function MathElement1() {
         "<br>" +
         "<p>Mathematics is used in <strong>game development</strong> to calculate physics, stats, the economy, levels and more;</p>" +
         "<br>" +
-        "<div class='img'><img class='math2' src='../Math2.jpeg'></div>"
+        "<div class='img'><img class='math2' src='../Math2.jpeg'></div>",
     ],
     ["idkz", "2023/07/21", "Vectors"],
     ["Hells_Chan", "2023/07/21", "Lists"],
     ["Capybaraa", "2023/07/21", "Ordered Lists"],
-    ["Villager", "2023/07/21", "Tuples"]
+    ["Villager", "2023/07/21", "Tuples"],
   ];
+
+  
 
   return (
     <Flex justify={"center"} flexDir={"column"} w="100%">
@@ -40,6 +44,7 @@ export default function MathElement1() {
           wrap={"wrap"}
           justify={"center"}
           w="100%"
+          minW={'450px'}
           marginTop={50}
           marginBottom={100}
         >
