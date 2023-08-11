@@ -16,7 +16,7 @@ export const Comment = ({ user, datetime, comment }: Props) => {
         flexDirection={"column"}
         w="100%"
         minH={100}
-        bg={useColorModeValue("gray.100", "gray.900")}
+        bg={useColorModeValue("gray.100", "gray.700")}
         borderRadius={"10px"}
         gap={5}
         padding={8}
