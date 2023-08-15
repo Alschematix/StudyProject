@@ -15,6 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const NAV_ITEMS = [
     {
       label: "Home",
