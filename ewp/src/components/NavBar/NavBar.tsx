@@ -34,14 +34,14 @@ interface Props {
 
 export default function NavBar({ onClick }: Props) {
   const { isOpen, onToggle } = useDisclosure();
-  const NAV_ITEM: Array<NavItem> = [
+  const NAV_ITEM = [
     {
       label: "Home",
       href: "/",
     },
     {
       label: "About",
-      children: [
+      subNav: [
         {
           label: "The mission",
           subLabel: "What we're here to do",
@@ -57,7 +57,7 @@ export default function NavBar({ onClick }: Props) {
     {
       label: "Learn",
       href: "learn",
-      children: [
+      subNav: [
         {
           label: "Fields",
           href: "fields",

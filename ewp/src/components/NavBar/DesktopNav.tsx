@@ -13,7 +13,7 @@ import DesktopSubNav from "./DesktopSubNav";
 interface NavItem {
   label: string;
   subLabel?: string;
-  subNav?: Array<NavItem>;
+  subNav?: NavItem[];
   href?: string;
 }
 
