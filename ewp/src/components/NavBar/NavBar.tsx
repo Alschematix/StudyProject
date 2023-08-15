@@ -57,7 +57,7 @@ export default function NavBar({ onClick, navItems }: Props) {
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
+        borderColor={useColorModeValue("gray.200", "gray.600")}
         align={"center"}
       >
         <Flex
