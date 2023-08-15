@@ -1,6 +1,6 @@
 "use client";
 import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/NavBar/NavBar";
 import Spacer from "@/components/Spacer";
 import SignIn from "@/components/SignIn";
 import { ChakraProvider, useDisclosure } from "@chakra-ui/react";

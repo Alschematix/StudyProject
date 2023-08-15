@@ -1,7 +1,7 @@
 "use client";
 
-import { SearchBar } from "./SearchBar";
-import { ToggleLight } from "./ColorMode";
+import { SearchBar } from "../SearchBar";
+import { ToggleLight } from "../ColorMode";
 
 import {
   Box,
@@ -25,6 +25,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import DesktopNav from "./DesktopNav";
 
 //Added Props to pass an onclick function
 interface Props {
@@ -33,6 +34,53 @@ interface Props {
 
 export default function NavBar({ onClick }: Props) {
   const { isOpen, onToggle } = useDisclosure();
+  const NAV_ITEM: Array<NavItem> = [
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "About",
+      children: [
+        {
+          label: "The mission",
+          subLabel: "What we're here to do",
+          href: "mission",
+        },
+        {
+          label: "The team",
+          subLabel: "Learn about the creators",
+          href: "team",
+        },
+      ],
+    },
+    {
+      label: "Learn",
+      href: "learn",
+      children: [
+        {
+          label: "Fields",
+          href: "fields",
+        },
+        {
+          label: "Applications",
+          href: "applications",
+        },
+        {
+          label: "Map",
+          href: "map",
+        },
+        {
+          label: "Dictionary",
+          href: "dictionary",
+        },
+      ],
+    },
+    {
+      label: "Forum",
+      href: "forum",
+    },
+  ];
 
   return (
     <Box>
@@ -80,7 +128,7 @@ export default function NavBar({ onClick }: Props) {
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
+            <DesktopNav navItems={NAV_ITEM} />
           </Flex>
         </Flex>
 
@@ -126,97 +174,6 @@ export default function NavBar({ onClick }: Props) {
     </Box>
   );
 }
-
-const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
-
-  return (
-    <Stack direction={"row"} spacing={4} alignItems={"center"}>
-      {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
-            <PopoverTrigger>
-              <Box
-                as="a"
-                p={2}
-                href={navItem.href ?? "#"}
-                fontSize={"sm"}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: "none",
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
-              </Box>
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={"xl"}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={"xl"}
-                minW={"sm"}
-              >
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
-        </Box>
-      ))}
-      <Flex align="flex-start">
-        <SearchBar />
-      </Flex>
-    </Stack>
-  );
-};
-
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-  return (
-    <Box
-      as="a"
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("green.50", "gray.900") }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease-in-out"}
-            _groupHover={{ color: "green.400" }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"green.400"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Box>
-  );
-};
 
 const MobileNav = () => {
   return (
