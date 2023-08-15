@@ -26,61 +26,23 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
+
+interface NavItem {
+  label: string;
+  subLabel?: string;
+  subNav?: NavItem[];
+  href?: string;
+}
 
 //Added Props to pass an onclick function
 interface Props {
   onClick: () => void;
+  navItems: NavItem[];
 }
 
-export default function NavBar({ onClick }: Props) {
+export default function NavBar({ onClick, navItems }: Props) {
   const { isOpen, onToggle } = useDisclosure();
-  const NAV_ITEM = [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "About",
-      subNav: [
-        {
-          label: "The mission",
-          subLabel: "What we're here to do",
-          href: "mission",
-        },
-        {
-          label: "The team",
-          subLabel: "Learn about the creators",
-          href: "team",
-        },
-      ],
-    },
-    {
-      label: "Learn",
-      href: "learn",
-      subNav: [
-        {
-          label: "Fields",
-          href: "fields",
-        },
-        {
-          label: "Applications",
-          href: "applications",
-        },
-        {
-          label: "Map",
-          href: "map",
-        },
-        {
-          label: "Dictionary",
-          href: "dictionary",
-        },
-      ],
-    },
-    {
-      label: "Forum",
-      href: "forum",
-    },
-  ];
 
   return (
     <Box>
@@ -128,7 +90,7 @@ export default function NavBar({ onClick }: Props) {
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav navItems={NAV_ITEM} />
+            <DesktopNav navItems={navItems} />
           </Flex>
         </Flex>
 
@@ -169,136 +131,8 @@ export default function NavBar({ onClick }: Props) {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav navItems={navItems} />
       </Collapse>
     </Box>
   );
 }
-
-const MobileNav = () => {
-  return (
-    <Stack
-      pos={"fixed"}
-      top="55"
-      w="100%"
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-      zIndex={9000}
-    >
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  return (
-    <Stack spacing={4} onClick={children && onToggle} zIndex={9000}>
-      <Box
-        // pos='fixed'
-
-        py={2}
-        as="a"
-        href={href ?? "#"}
-        justifyContent="space-between"
-        alignItems="center"
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all 0s"}
-            transform={isOpen ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-          />
-        )}
-      </Box>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
-          align={"start"}
-        >
-          {children &&
-            children.map((child) => (
-              <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Box>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
-  );
-};
-
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "About",
-    children: [
-      {
-        label: "The mission",
-        subLabel: "What we're here to do",
-        href: "mission",
-      },
-      {
-        label: "The team",
-        subLabel: "Learn about the creators",
-        href: "team",
-      },
-    ],
-  },
-  {
-    label: "Learn",
-    href: "learn",
-    children: [
-      {
-        label: "Fields",
-        href: "fields",
-      },
-      {
-        label: "Applications",
-        href: "applications",
-      },
-      {
-        label: "Map",
-        href: "map",
-      },
-      {
-        label: "Dictionary",
-        href: "dictionary",
-      },
-    ],
-  },
-  {
-    label: "Forum",
-    href: "forum",
-  },
-];
