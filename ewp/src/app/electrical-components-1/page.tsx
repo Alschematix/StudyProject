@@ -28,17 +28,14 @@ export default function ElectricalComponentsExpand() {
           marginBottom={100}
         >
           <VStack w="80%" gap="30px">
-            
-              
-                {contributors.map((contribute) => (
-                  <Contributor
-                    name={contribute[0]}
-                    date={contribute[1]}
-                    content={content}
-                  />
-                ))}
-              
-            
+            {contributors.map((contribute) => (
+              <Contributor
+                name={contribute[0]}
+                date={contribute[1]}
+                content={content}
+                title={""}
+              />
+            ))}
           </VStack>
         </Flex>
       </Flex>
