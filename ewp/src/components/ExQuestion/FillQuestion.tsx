@@ -1,10 +1,16 @@
 import { Text, Input, Box } from "@chakra-ui/react";
-export default function FillQUestion() {
+
+interface Props {
+  question: string;
+  answerKey: { Item: string; isAns: boolean }[];
+}
+
+export default function FillQUestion({ question, answerKey }: Props) {
   return (
     <Box pl={10}>
+      {question}
       <Text>
-        Paul's favorite animal is a <Input placeholder="Answer" />, which is
-        also his Discord Profile Picture.
+        <strong>Answer:</strong> <Input />
       </Text>
     </Box>
   );

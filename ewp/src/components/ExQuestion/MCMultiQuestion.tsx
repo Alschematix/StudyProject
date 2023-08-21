@@ -7,7 +7,12 @@ import {
   useCheckboxGroup,
 } from "@chakra-ui/react";
 
-export default function MCMultiQuestion() {
+interface Props {
+  question: string;
+  answerKey: { Item: string; isAns: boolean }[];
+}
+
+export default function MCMultiQuestion({ question, answerKey }: Props) {
   let val: string[] = [];
   const onChange = (value: string[]) => {
     val = value;
@@ -15,7 +20,7 @@ export default function MCMultiQuestion() {
   };
   return (
     <VStack align={"baseline"} pl={10}>
-      <Text>Who is the product Owner? </Text>
+      <Text>Who are the developers? </Text>
       <CheckboxGroup onChange={onChange}>
         <VStack align={"baseline"} pl={5}>
           <Checkbox value="1">Paul</Checkbox>
