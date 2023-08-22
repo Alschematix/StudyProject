@@ -2,7 +2,7 @@ import { Text, Input, Box } from "@chakra-ui/react";
 
 interface Props {
   question: string;
-  answerKey: { Item: string; isAns: boolean }[];
+  answerKey: { item: string; isAns: boolean }[];
 }
 
 export default function FillQUestion({ question, answerKey }: Props) {

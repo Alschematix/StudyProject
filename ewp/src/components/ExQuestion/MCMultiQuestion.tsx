@@ -9,7 +9,7 @@ import {
 
 interface Props {
   question: string;
-  answerKey: { Item: string; isAns: boolean }[];
+  answerKey: { item: string; isAns: boolean }[];
 }
 
 export default function MCMultiQuestion({ question, answerKey }: Props) {
@@ -20,14 +20,14 @@ export default function MCMultiQuestion({ question, answerKey }: Props) {
   };
   return (
     <VStack align={"baseline"} pl={10}>
-      <Text>Who are the developers? </Text>
+      <Text>{question}</Text>
       <CheckboxGroup onChange={onChange}>
         <VStack align={"baseline"} pl={5}>
-          <Checkbox value="1">Paul</Checkbox>
-          <Checkbox value="2">Alex</Checkbox>
-          <Checkbox value="3">Zach</Checkbox>
-          <Checkbox value="4">Jonathan</Checkbox>
-          <Checkbox value="5">Ty</Checkbox>
+          {answerKey.map((item, index) => (
+            <Checkbox value={index.toString()} key={index}>
+              {item.item}
+            </Checkbox>
+          ))}
         </VStack>
       </CheckboxGroup>
     </VStack>

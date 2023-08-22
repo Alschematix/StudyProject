@@ -3,7 +3,7 @@ import { VStack, Text, RadioGroup, Radio } from "@chakra-ui/react";
 
 interface Content {
   question: string;
-  answerKey: { Item: string; isAns: boolean }[];
+  answerKey: { item: string; isAns: boolean }[];
 }
 
 interface Props {
@@ -24,7 +24,7 @@ export default function MCSingleQuestion({ getValue, content }: Props) {
         <VStack align={"baseline"} pl={5}>
           {content.answerKey.map((item, index) => (
             <Radio value={index.toString()} key={index}>
-              {item.Item}
+              {item.item}
             </Radio>
           ))}
         </VStack>

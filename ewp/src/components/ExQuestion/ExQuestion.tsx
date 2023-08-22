@@ -14,18 +14,18 @@ import { useState } from "react";
 
 export default function ExQuestion() {
   const [value, setValue] = useState("");
-  const ITEMS_TRIAL = [
+  const iTEMS_TRIAL = [
     {
       label: "SubjEx1",
       type: "MCSingle",
       content: {
         question: "Who is the product Owner?",
         answerKey: [
-          { Item: "Paul", isAns: false },
-          { Item: "Alex", isAns: true },
-          { Item: "Zach", isAns: false },
-          { Item: "Jonathan", isAns: false },
-          { Item: "Ty", isAns: false },
+          { item: "Paul", isAns: false },
+          { item: "Alex", isAns: true },
+          { item: "Zach", isAns: false },
+          { item: "Jonathan", isAns: false },
+          { item: "Ty", isAns: false },
         ],
       },
     },
@@ -35,11 +35,11 @@ export default function ExQuestion() {
       content: {
         question: "Who are the developers?",
         answerKey: [
-          { Item: "paul", isAns: true },
-          { Item: "Alex", isAns: false },
-          { Item: "Zach", isAns: true },
-          { Item: "Jonathan", isAns: true },
-          { Item: "Ty", isAns: true },
+          { item: "paul", isAns: true },
+          { item: "Alex", isAns: false },
+          { item: "Zach", isAns: true },
+          { item: "Jonathan", isAns: true },
+          { item: "Ty", isAns: true },
         ],
       },
     },
@@ -49,7 +49,7 @@ export default function ExQuestion() {
       content: {
         question:
           "Paul's favorite animal is a [blank], which is also his Discord Profile Picture.",
-        answerKey: [{ Item: "Cappybara", isAns: true }],
+        answerKey: [{ item: "Cappybara", isAns: true }],
       },
     },
   ];
@@ -57,7 +57,7 @@ export default function ExQuestion() {
   return (
     <Flex justify={"center"}>
       <Accordion allowMultiple px={20} w={"800px"}>
-        {ITEMS_TRIAL.map((q, i) => (
+        {iTEMS_TRIAL.map((q, i) => (
           <AccordionItem key={q.label}>
             <AccordionButton>
               Question {i + 1}
