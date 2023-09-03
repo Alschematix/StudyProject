@@ -5,6 +5,7 @@ import LogoutButton from "../LogoutButton";
 import { Button } from "./button";
 import { InputWithButton } from "./input-with-button";
 import {PiApertureBold} from 'react-icons/pi'
+import { User } from "../User";
 
 interface Props {
   user: string;
@@ -15,7 +16,7 @@ export function UserNav({ user }: Props) {
     <header className="flex items-center w-full h-14 border-b-[0.5px] border-tertiary">
       <div className="flex items-center justify-start gap-4 w-[60%] h-full px-4">
       <Button variant="outline" size="icon">
-          <Link href="#" className="text-2xl"><PiApertureBold /></Link>
+          <Link href="/#" className="text-2xl"><PiApertureBold /></Link>
         </Button>
         <div className="flex w-[60%] justify-evenly">
         <Link href="#">Home</Link>
@@ -30,9 +31,10 @@ export function UserNav({ user }: Props) {
 
 
       <div className="flex items-center justify-end gap-4 w-[40%] h-full px-4">
-        {user}
+        <Link href={"dashboard"}>Dashboard</Link>
+
         <Toggle />
-        <LogoutButton />
+        <User user={user} />
       </div>
       <div />
     </header>
