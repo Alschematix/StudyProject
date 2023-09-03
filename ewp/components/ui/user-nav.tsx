@@ -6,6 +6,7 @@ import { Button } from "./button";
 import { InputWithButton } from "./input-with-button";
 import {PiApertureBold} from 'react-icons/pi'
 import { User } from "../User";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./dropdown-menu";
 
 interface Props {
   user: string;
@@ -21,7 +22,28 @@ export function UserNav({ user }: Props) {
         <div className="flex w-[60%] justify-evenly">
         <Link href="#">Home</Link>
         <Link href="#">About</Link>
-        <Link href="#">Learn</Link>
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <span className="cursor-pointer">Learn</span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link href="fields">All Fields</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Electrical Components
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Math
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Physics
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Control Theory
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         <Link href="#">Forum</Link>
       </div>
       <div className="w-30%">

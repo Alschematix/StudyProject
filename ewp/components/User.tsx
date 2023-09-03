@@ -18,7 +18,7 @@ export function User({user}:Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-      <div className="rounded-full bg-secondary w-8 h-8 cursor-pointer"></div>
+      <div className="w-8 h-8 rounded-full cursor-pointer bg-secondary"></div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="flex flex-col justify-center w-full">
         <DropdownMenuItem className="flex">
@@ -28,7 +28,7 @@ export function User({user}:Props) {
           Profile
         </DropdownMenuItem>
         <DropdownMenuItem  className="flex justify-center">
-          Dark
+          Settings
         </DropdownMenuItem>
         <DropdownMenuItem  className="flex justify-center">
           <LogoutButton />
