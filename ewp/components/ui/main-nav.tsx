@@ -32,7 +32,7 @@ export function MainNav() {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>
-                <Link href="fields">All Fields</Link>
+                <Link href="../fields">All Fields</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 Electrical Components

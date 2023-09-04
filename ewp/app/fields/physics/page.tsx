@@ -1,11 +1,10 @@
-import CardLayout from "../fields/components/CardLayout";
+import CardLayout from "../components/CardLayout";
 
-// Map of topic titles and the link to that topic page
 const elements = new Map([
-    ["Control Theory", "./fields/control-theory"],
-    ["Electrical Components", "./fields/electrical-components"],
-    ["Math", "./fields/math"],
-    ["Physics", "./fields/physics"],
+    ["Physics Element 1", "../fields/physics/physics-1"],
+    ["Physics Element 2", "../fields/physics/physics-2"],
+    ["Physics Element 3", "../fields/physics/physics-3"],
+    ["Physics Element 4", "../fields/physics/physics-4"],
   ]);
 
 export default function Physics() {
