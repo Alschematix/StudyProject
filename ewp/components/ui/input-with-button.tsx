@@ -3,13 +3,14 @@ import { Input } from "@/components/ui/input"
 
 interface Props {
   holder: string;
+  button: string;
 }
 
-export function InputWithButton({holder}:Props) {
+export function InputWithButton({holder,button}:Props) {
   return (
-    <div className="flex w-full max-w-sm items-center space-x-2">
+    <div className="flex items-center w-full max-w-sm space-x-2">
       <Input type="text" placeholder={holder} />
-      <Button type="submit">Search</Button>
+      <Button type="submit">{button}</Button>
     </div>
   )
 }

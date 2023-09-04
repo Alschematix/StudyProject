@@ -1,4 +1,4 @@
-import CardLayout from "../components/CardLayout";
+import CardLayout from "../../components/CardLayout";
 
 const elements = new Map([
     ["Electrical Components Element 1", "../fields/electrical-components/electrical-components-1"],

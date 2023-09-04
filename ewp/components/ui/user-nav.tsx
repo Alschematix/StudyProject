@@ -14,19 +14,20 @@ import {
 
 interface Props {
   user: string;
+  image: string;
 }
 
-export function UserNav({ user }: Props) {
+export function UserNav({ user, image }: Props) {
   return (
-    <header className="flex items-center w-full h-14 border-b-[0.5px] border-tertiary">
-      <div className="flex items-center justify-start gap-4 w-[60%] h-full px-4">
+    <header className="flex items-center w-full h-14 border-b-[0.5px] border-tertiary fixed z-10 backdrop-blur-md">
+      <div className="flex items-center justify-start gap-4 w-[60%] h-full px-4 z-10">
         <Button variant="outline" size="icon">
-          <Link href="/#" className="text-2xl">
+          <Link href="../../../#" className="text-2xl">
             <PiApertureBold />
           </Link>
         </Button>
         <div className="flex w-[60%] justify-evenly">
-          <Link href="/#">Home</Link>
+          <Link href="../../../#">Home</Link>
           <Link href="#">About</Link>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -34,30 +35,30 @@ export function UserNav({ user }: Props) {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem className="w-full">
-                <Link href="../fields">All Fields</Link>
+                <Link href="../../../learn">Learn Page</Link>
               </DropdownMenuItem>
 
               <DropdownMenuItem className="w-full cursor-pointer">
-              <Link href="../fields/electrical-components">Electrical Components</Link>
+              <Link href="../../../learn/fields">Fields</Link>
               </DropdownMenuItem>
               
-              <DropdownMenuItem><Link href="../fields/math">Math</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href="../fields/physics">Physics</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href="../fields/control-theory">Control Theory</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../learn/applications">Applications</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../learn/map">Map</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../learn/dictionary">dictionary</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link href="#">Forum</Link>
         </div>
         <div className="w-30%">
-          <InputWithButton holder={"Search"} />
+          <InputWithButton holder={"Search"} button={"Search"}/>
         </div>
       </div>
 
       <div className="flex items-center justify-end gap-4 w-[40%] h-full px-4">
-        <Link href={"../dashboard"}>Dashboard</Link>
+        <Link href={"../../../dashboard"}>Dashboard</Link>
 
         <Toggle />
-        <User user={user} />
+        <User image={image} user={user} />
       </div>
       <div />
     </header>

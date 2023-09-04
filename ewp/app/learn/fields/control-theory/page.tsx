@@ -1,4 +1,4 @@
-import CardLayout from "../components/CardLayout";
+import CardLayout from "../../components/CardLayout";
 
 const elements = new Map([
     ["Control Theory Element 1", "../fields/control-theory/control-theory-1"],

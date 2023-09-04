@@ -1,8 +1,8 @@
-import CardLayout from "../components/CardLayout";
+import CardLayout from "../../components/CardLayout";
 
 const elements = new Map([
-    ["Math Element 1", "../math/math-1"],
-    ["Math Element 2", "../math/math-2"],
+    ["Math Element 1", "../../learn/fields/math/math-1"],
+    ["Math Element 2", "../fields/math/math-2"],
     ["Math Element 3", "../math/math-3"],
     ["Math Element 4", "../math/math-4"],
   ]);
