@@ -1,4 +1,3 @@
-import { User } from "@/components/User";
 import { Card } from "@/components/ui/card";
 
 interface Props {

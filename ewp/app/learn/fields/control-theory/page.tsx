@@ -1,10 +1,10 @@
 import CardLayout from "../../components/CardLayout";
 
 const elements = new Map([
-    ["Control Theory Element 1", "../fields/control-theory/control-theory-1"],
-    ["Control Theory Element 2", "../fields/control-theory/control-theory-2"],
-    ["Control Theory Element 3", "../fields/control-theory/control-theory-3"],
-    ["Control Theory Element 4", "../fields/control-theory/control-theory-4"],
+    ["Control Theory Element 1", "../../learn/fields/control-theory/control-theory-1"],
+    ["Control Theory Element 2", "../../learn/fields/control-theory/control-theory-2"],
+    ["Control Theory Element 3", "../../learn/fields/control-theory/control-theory-3"],
+    ["Control Theory Element 4", "../../learn/fields/control-theory/control-theory-4"],
   ]);
 
 export default function ControlTheory() {

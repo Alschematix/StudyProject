@@ -14,8 +14,6 @@ export default async function RootLayout({
 }) {
   const supabase = createServerComponentClient({ cookies });
 
-
-
   const {
     data: { user },
   } = await supabase.auth.getUser();

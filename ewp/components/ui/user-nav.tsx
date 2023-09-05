@@ -19,7 +19,7 @@ interface Props {
 
 export function UserNav({ user, image }: Props) {
   return (
-    <header className="flex items-center w-full h-14 border-b-[0.5px] border-tertiary fixed z-10 backdrop-blur-md">
+    <header className="flex items-center w-full h-14 border-b-[0.5px] border-tertiary fixed z-10 bg-inherit">
       <div className="flex items-center justify-start gap-4 w-[60%] h-full px-4 z-10">
         <Button variant="outline" size="icon">
           <Link href="../../../#" className="text-2xl">
@@ -38,13 +38,13 @@ export function UserNav({ user, image }: Props) {
                 <Link href="../../../learn">Learn Page</Link>
               </DropdownMenuItem>
 
-              <DropdownMenuItem className="w-full cursor-pointer">
+              <DropdownMenuItem className="w-full">
               <Link href="../../../learn/fields">Fields</Link>
               </DropdownMenuItem>
               
-              <DropdownMenuItem><Link href="../../../learn/applications">Applications</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href="../../../learn/map">Map</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href="../../../learn/dictionary">dictionary</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../../learn/applications">Applications</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../../learn/map">Map</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../../learn/dictionary">dictionary</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link href="#">Forum</Link>

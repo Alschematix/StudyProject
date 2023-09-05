@@ -27,13 +27,11 @@ const contributors: string[][] = [
   ["Villager", "2023/07/21", "Tuples", "", ""],
 ];
 
-
-
 export default function Math1() {
   return (
     <>
-        {contributors.map((item)=>
-        <Element contributor={item} />
+        {contributors.map((item,key)=>
+        <Element contributor={item} cIndex={key} />
         )}
     </>
   );

@@ -1,10 +1,10 @@
 import CardLayout from "../../components/CardLayout";
 
 const elements = new Map([
-    ["Electrical Components Element 1", "../fields/electrical-components/electrical-components-1"],
-    ["Electrical Components Element 2", "../fields/electrical-components/electrical-components-2"],
-    ["Electrical Components Element 3", "../fields/electrical-components/electrical-components-3"],
-    ["Electrical Components Element 4", "../fields/electrical-components/electrical-components-4"],
+    ["Electrical Components Element 1", "../../learn/fields/electrical-components/electrical-components-1"],
+    ["Electrical Components Element 2", "../../learn/fields/electrical-components/electrical-components-2"],
+    ["Electrical Components Element 3", "../../learn/fields/electrical-components/electrical-components-3"],
+    ["Electrical Components Element 4", "../../learn/fields/electrical-components/electrical-components-4"],
   ]);
 
 export default function ElectricalComponents() {

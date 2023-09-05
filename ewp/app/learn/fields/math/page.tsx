@@ -2,9 +2,9 @@ import CardLayout from "../../components/CardLayout";
 
 const elements = new Map([
     ["Math Element 1", "../../learn/fields/math/math-1"],
-    ["Math Element 2", "../fields/math/math-2"],
-    ["Math Element 3", "../math/math-3"],
-    ["Math Element 4", "../math/math-4"],
+    ["Math Element 2", "../../learn/fields/math/math-2"],
+    ["Math Element 3", "../../learn/fields/math/math-3"],
+    ["Math Element 4", "../../learn/fields/math/math-4"]
   ]);
 
 export default function Math() {
