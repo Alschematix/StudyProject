@@ -17,9 +17,9 @@ const Bookmark = ({ onClick, color, size }: Props) => {
   };
 
   return status ? (
-    <FaBookmark className={color}size={size} onClick={toggle} />
+    <FaBookmark className={`cursor-pointer ${color}`} size={size} onClick={toggle} />
   ) : (
-    <FaRegBookmark className={color} size={size} onClick={toggle} />
+    <FaRegBookmark className={`cursor-pointer ${color}`} size={size} onClick={toggle} />
   );
 };
 

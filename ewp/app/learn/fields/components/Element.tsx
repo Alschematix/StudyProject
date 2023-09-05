@@ -31,8 +31,8 @@ export default function Element({ contributor, cIndex }: Props) {
 
   //   store comments in array
   const comments: any[][] = [
-    [0, "/../stockuser.png", "user", "i don't get it", "2023/09/03"],
-    [0, "/../stockuser.png", "user2", "i hate math!!!", "2023/09/04"],
+    [0, "/../stockuser.png", "user", "i don't get it", "2023-09-02T12:00:00"],
+    [0, "/../stockuser.png", "user2", "i hate math!!!", "2023-08-01T12:00:00"],
   ];
 
   let numOfComments = 0;

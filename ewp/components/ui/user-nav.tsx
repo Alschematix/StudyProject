@@ -35,16 +35,16 @@ export function UserNav({ user, image }: Props) {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem className="w-full">
-                <Link href="../../../learn">Learn Page</Link>
+                <Link href="../../../learn" className="w-full">Learn Page</Link>
               </DropdownMenuItem>
 
               <DropdownMenuItem className="w-full">
-              <Link href="../../../learn/fields">Fields</Link>
+              <Link href="../../../learn/fields" className="w-full">Fields</Link>
               </DropdownMenuItem>
               
-              <DropdownMenuItem><Link href="../../../../learn/applications">Applications</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href="../../../../learn/map">Map</Link></DropdownMenuItem>
-              <DropdownMenuItem><Link href="../../../../learn/dictionary">dictionary</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../../learn/applications" className="w-full">Applications</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../../learn/map" className="w-full">Map</Link></DropdownMenuItem>
+              <DropdownMenuItem><Link href="../../../../learn/dictionary" className="w-full">Dictionary</Link></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Link href="#">Forum</Link>
