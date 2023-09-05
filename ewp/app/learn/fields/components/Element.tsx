@@ -94,7 +94,7 @@ export default function Element({ contributor, cIndex }: Props) {
                             />
                           )
                       )}
-                      <div className="w-full m-2">
+                      <div className="w-full m-[4px]">
                         <TextareaWithButton />
                       </div>
                     </div>
