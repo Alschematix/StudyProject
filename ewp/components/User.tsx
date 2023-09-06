@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import LogoutButton from "./LogoutButton";
+import Link from "next/link";
 
 interface Props {
     user: string;
@@ -27,7 +28,7 @@ export function User({user,image}:Props) {
          {user}
         </DropdownMenuItem>
         <DropdownMenuItem className="flex justify-center">
-          Profile
+          <Link href="../../../../account">Account</Link>
         </DropdownMenuItem>
         <DropdownMenuItem  className="flex justify-center">
           Settings

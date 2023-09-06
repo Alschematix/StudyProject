@@ -78,7 +78,8 @@ export default function Element({ contributor, cIndex }: Props) {
                 <AccordionItem value="item-2">
                   <AccordionTrigger>Content</AccordionTrigger>
                   <AccordionContent>
-                    {/* Use dangerouslySetInnerHTML to render the HTML */}
+                    {/* Use dangerouslySetInnerHTML to render the HTML 
+                    NOTE: please sanitize HTML before we put this into production as this can cause issues*/}
                     <div dangerouslySetInnerHTML={createMarkup(html)} />
                     <div className="flex flex-wrap justify-between gap-4 mt-4">
                       <span>{numOfComments} Comments</span>
