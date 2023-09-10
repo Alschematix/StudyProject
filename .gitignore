@@ -34,3 +34,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# JetBrains
+.idea/
+
+# Fleet
+.fleet/
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# VS Code
+.vscode/
