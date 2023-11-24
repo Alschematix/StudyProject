@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "generate": "drizzle-kit generate:pg",
+    "migrate": "ts-node src/index.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
@@ -18,10 +20,12 @@
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "drizzle-orm": "^0.29.0",
     "lucide-react": "^0.274.0",
     "next": "latest",
     "next-themes": "^0.2.1",
     "postcss": "8.4.24",
+    "postgres": "^3.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
@@ -35,6 +39,8 @@
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
+    "dotenv": "^16.3.1",
+    "drizzle-kit": "^0.20.4",
     "encoding": "^0.1.13"
   }
 }
