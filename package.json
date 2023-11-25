@@ -5,6 +5,7 @@
     "build": "next build",
     "start": "next start",
     "generate": "drizzle-kit generate:pg",
+    "drizzle:push": "drizzle-kit push:pg",
     "migrate": "ts-node src/index.ts"
   },
   "dependencies": {
