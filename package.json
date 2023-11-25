@@ -44,6 +44,7 @@
     "dotenv": "^16.3.1",
     "drizzle-kit": "^0.20.4",
     "encoding": "^0.1.13",
+    "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
   }
 }
