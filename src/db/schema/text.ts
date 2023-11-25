@@ -3,11 +3,23 @@ import { pgTable, serial, integer, text, timestamp, jsonb } from "drizzle-orm/pg
 import { user } from "./user";
 import { relations } from "drizzle-orm";
 
+export const textContentCategory = pgTable('text_category', {
+    id: serial('id').primaryKey(),
+    name: text('name').notNull(),
+});
+
+export const textContentCategoryRelations = relations(
+    textContentCategory, ({ many }) => ({
+        textContent: many(textContent)
+    })
+);
+
 export const textContent = pgTable('text', {
     id: serial('id').primaryKey(),
+    authorId: integer('author_id').references(() => user.id),
+    categoryId: integer('category_id').references(() => textContentCategory.id),
     title: text('title'),
     body: text('body'),
-    authorId: integer('author_id').references(() => user.id),
     metadata: jsonb('metadata'),
     createdAt: timestamp('created_at').defaultNow(),
     updatedAt: timestamp('updated_at').defaultNow(),
@@ -15,9 +27,13 @@ export const textContent = pgTable('text', {
 
 export const textContentRelations = relations(
     textContent, ({ one }) => ({
-          author: one(user, {
-                fields: [textContent.authorId],
-                references: [user.id]
-          })
+        author: one(user, {
+            fields: [textContent.authorId],
+            references: [user.id]
+        }),
+        textContent: one(textContentCategory, {
+            fields: [textContent.categoryId],
+            references: [textContentCategory.id]
         })
+    })
 );
