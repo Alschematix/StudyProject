@@ -1,0 +1,9 @@
+[
+  {
+    "category": "equation",
+    "content":  [
+      {"title":"Pythagorean Theorem", "body":"a**2 + b**2 = c**2", "metadata":{}},
+      {"title":"Euler's Identity", "body":"e**(i*pi) + 1 = 0", "metadata":{}}
+    ]
+  }
+]
