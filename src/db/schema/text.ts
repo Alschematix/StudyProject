@@ -5,7 +5,7 @@ import { relations } from "drizzle-orm";
 
 export const textContentCategory = pgTable('text_category', {
     id: serial('id').primaryKey(),
-    name: text('name').notNull(),
+    name: text('name').notNull().unique(),
 });
 
 export const textContentCategoryRelations = relations(
