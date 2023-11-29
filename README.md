@@ -19,7 +19,7 @@ You'll need to install the [Supabase CLI](https://supabase.com/docs/guides/cli) 
 Detailed steps can be found in the [Supabase CLI Docs](https://supabase.com/docs/guides/cli/getting-started).
 
 4. Run `supabase start` to launch the Supabase stack.
-5. Add the `DB_URL` variable as `DATABASE_URL` to your `.env` file.
+5. Add the `DB_URL` variable as `DATABASE_URL` to your `.env.local` file.
 
 #### Migrations
 
@@ -29,4 +29,14 @@ Use migrations to create and update tables and other database objects. https://o
 
 1. Run `npx drizzle-kit generate:pg` to generate a migration file.
 2. Run `npm run migrate` to run the migration.
+
+#### Seed Data
+
+> **WARNING**: The seed command replaces all data in the database.
+
+The `drizzle:seed` command will seed the database with data for prototyping.
+Content can be added to `src/db/seed_content.json`.
+```bash
+npm run drizzle:seed
+```
 
