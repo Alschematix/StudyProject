@@ -1,27 +1,27 @@
 // Database CRUD operations
-import { textContent } from './schema/text';
-import { content } from './schema/content';
-import { db } from '../db';
+import {textContent} from './schema/text';
+import {content} from './schema/content';
+import {drizzle} from "drizzle-orm/postgres-js";
 
-async function insertTextContent(title: string, body: string, authorId: number, categoryId: number) {
+async function insertTextContent(db: ReturnType<typeof drizzle>, data: (typeof textContent.$inferInsert)[]) {
 
     await db.transaction(async (db) => {
 
-        const result = await db.insert(textContent).values({
-            title: title,
-            body: body,
-            authorId: authorId,
-            categoryId: categoryId,
-        }).returning({ textContentId: textContent.id });
+        const result = await db.insert(textContent).values(
+            data
+        ).returning({textContentId: textContent.id});
 
 
-        await db.insert(content).values({
-            type: 'text',
-            address: result[0].textContentId.toString(),
-        })
+        await db.insert(content).values(
+            result.map(({textContentId}) => ({
+                    type: 'text',
+                    address: textContentId.toString(),
+                }
+            ))
+        )
 
     });
 
 }
 
-export { insertTextContent };
+export {insertTextContent};
