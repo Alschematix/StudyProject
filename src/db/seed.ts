@@ -58,7 +58,7 @@ function getContent(path: string) : {textContentCategoryData: (typeof textConten
                             body: { type: "string" },
                             metadata: { type: "object" },
                         },
-                        required: ["title", "body"],
+                        required: ["body"],
                     },
                 },
             },
