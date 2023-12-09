@@ -1,4 +1,5 @@
 import {drizzle} from 'drizzle-orm/postgres-js';
+import { sql } from "drizzle-orm";
 import postgres from "postgres";
 import { user } from "./schema/user";
 import { faker } from "@faker-js/faker";
@@ -9,6 +10,8 @@ import * as fs from "fs";
 import * as readline from "readline";
 import {insertTextContent} from "../db/operations";
 import { content } from './schema/content';
+import { topic } from "./schema/topic";
+import { page, slot } from "./schema/page";
 dotenv.config({ path: "./.env.local" });
 const ajv = new Ajv();
 
@@ -98,6 +101,43 @@ function getContent(path: string) : {textContentCategoryData: (typeof textConten
     return {textContentCategoryData, textContentData};
 }
 
+function getTopic() {
+    const data: (typeof topic.$inferInsert)[] = [];
+
+    data.push(
+        {id: 1, name: "Electrical Components"},
+        {id: 2, name: "Math"},
+        {id: 3, name: "Physics"},
+        {id: 4, name: "Control Theory"},
+        )
+
+    return data;
+}
+
+function getPage() {
+    const data: (typeof page.$inferInsert)[] = [];
+
+    data.push(
+        {id: 1, title: "String Theory", creatorId: 1, topicId: 3}
+    )
+
+    return data;
+}
+
+function getSlot() {
+    const data: (typeof slot.$inferInsert)[] = [];
+
+    data.push(
+        {pageId: 1, contentId: 1},
+        {pageId: 1, contentId: 2},
+        {pageId: 1, contentId: 3},
+        {pageId: 1, contentId: 4},
+        {pageId: 1, contentId: 5},
+    )
+
+    return data;
+}
+
 
 async function seed(db: ReturnType<typeof drizzle>) {
     const userData = getUsers();
@@ -105,15 +145,23 @@ async function seed(db: ReturnType<typeof drizzle>) {
 
     console.log("Delete start");
     await db.delete(textContent);
+    await db.delete(slot);
     await db.delete(content);
+    await db.execute(sql`ALTER SEQUENCE content_id_seq RESTART WITH 1`)
     await db.delete(textContentCategory);
+    await db.delete(page);
     await db.delete(user);
+    await db.delete(topic);
+
     console.log("Delete done");
 
     console.log("Seed start");
     await db.insert(user).values(userData);
     await db.insert(textContentCategory).values(textContentCategoryData);
+    await db.insert(topic).values(getTopic());
     await insertTextContent(db, textContentData);
+    await db.insert(page).values(getPage());
+    await db.insert(slot).values(getSlot());
     console.log("Seed done");
 
 }

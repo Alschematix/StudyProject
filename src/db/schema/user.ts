@@ -1,6 +1,7 @@
 import {pgTable, serial, text, timestamp} from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import { textContent } from "./text";
+import {page} from "./page";
 
 export const user = pgTable('user', {
     id: serial('id').primaryKey(),
@@ -11,5 +12,8 @@ export const user = pgTable('user', {
 });
 
 export const userRelations = relations(
-    user, ({ many }) => ({ text: many(textContent) })
+    user, ({ many }) => ({
+        text: many(textContent),
+        page: many(page),
+    })
 );
