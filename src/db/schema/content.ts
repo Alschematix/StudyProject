@@ -6,8 +6,8 @@ import {slot} from "./page";
 
 export const content = pgTable('content', {
     id: serial('id').primaryKey(),
-    type: text('type'),
-    address: text('address'),
+    type: text('type').notNull(),
+    address: text('address').notNull(),
 });
 
 export const contentRelations = relations(

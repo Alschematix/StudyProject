@@ -16,10 +16,10 @@ export const textContentCategoryRelations = relations(
 
 export const textContent = pgTable('text', {
     id: serial('id').primaryKey(),
-    authorId: integer('author_id').references(() => user.id),
-    categoryId: integer('category_id').references(() => textContentCategory.id),
+    authorId: integer('author_id').notNull().references(() => user.id),
+    categoryId: integer('category_id').notNull().references(() => textContentCategory.id),
     title: text('title'),
-    body: text('body'),
+    body: text('body').notNull(),
     metadata: jsonb('metadata'),
     createdAt: timestamp('created_at').defaultNow(),
     updatedAt: timestamp('updated_at').defaultNow(),

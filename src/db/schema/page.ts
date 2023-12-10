@@ -7,8 +7,8 @@ import {topic} from "./topic";
 export const page = pgTable('page', {
     id: serial('id').primaryKey(),
     title: text('title').notNull(),
-    topicId: integer('topic_id').references(() => topic.id),
-    creatorId: serial('creator_id').references(() => user.id),
+    topicId: integer('topic_id').notNull().references(() => topic.id),
+    creatorId: serial('creator_id').notNull().references(() => user.id),
     createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -22,14 +22,14 @@ export const pageRelations = relations(
             fields: [page.topicId],
             references: [topic.id]
         }),
-        slot: many(slot),
+        slots: many(slot),
     })
 );
 
 export const slot = pgTable('slot', {
     id: serial('id').primaryKey(),
-    pageId: serial('page_id').references(() => page.id),
-    contentId: serial('content_id').references(() => content.id),
+    pageId: integer('page_id').notNull().references(() => page.id),
+    contentId: integer('content_id').notNull().references(() => content.id),
 });
 
 export const slotRelations = relations(

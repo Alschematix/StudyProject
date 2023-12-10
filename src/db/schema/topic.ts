@@ -4,7 +4,7 @@ import { page } from "./page";
 
 export const topic = pgTable('topic', {
     id: serial('id').primaryKey(),
-    name: text('name'),
+    name: text('name').notNull().unique(),
 });
 
 export const topicRelations = relations(
